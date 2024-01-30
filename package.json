@@ -1,0 +1,16 @@
+{
+  "name": "poc-rabbitmq",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/amqplib": "^0.10.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "zod": "^3.22.4"
+  }
+}

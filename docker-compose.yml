@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - amqpnetwork
+  # producer:
+  #   image: oven/bun:1.0
+  #   container_name: producer
+  #   working_dir: /app
+  #   environment:
+  #     RABBITMQ_PASS: "rabbitmq"
+  #     RABBITMQ_USER: "rabbitmq"
+  #     RABBITMQ_HOST: "rabbitmq"
+  #   volumes:
+  #     - .:/app
+  #   command: bun producer.ts
+  #   depends_on:
+  #     - rabbitmq
+  #   networks:
+  #     - amqpnetwork
+
+networks:
+  amqpnetwork:
